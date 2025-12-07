@@ -1,20 +1,13 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-import pyttsx3
 from time import sleep, perf_counter, localtime, strftime
 import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-puhuja = pyttsx3.init()
-äänet = puhuja.getProperty("voices")
-puhuja.setProperty("voice", äänet[37].id) # Ääni 37 on suomalainen!
-
 def sano(sanottava, viive=0):
     print(sanottava)
-    puhuja.say(sanottava)
-    puhuja.runAndWait()
     sleep(viive)
 
 def tallenna_tarina(tarina, tiedostonimi="tarina.txt"):
