@@ -1,8 +1,14 @@
 {
   "version": 2,
   "functions": {
-    "api/generate.py": {
+    "api/tarina.py": {
       "runtime": "python3.11"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/api/HTTPStarinaAI",
+      "dest": "api/HTTPStarinaAI.py"
+    }
+  ]
 }
