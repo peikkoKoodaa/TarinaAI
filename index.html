@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarina AI</title>
+</head>
+<body>
+    <h1>Luo Tarina</h1>
+    <input type="text" id="alkusana" placeholder="Aloitussana">
+    <input type="number" id="pituus" placeholder="Pituus" value="200">
+    <button onclick="haeTarina()">Generoi tarina!</button>
+    <pre id="tarina"></pre>
+
+    <script>
+        async function haeTarina() {
+            const alkusana = document.getElementById("alkusana").value;
+            const pituus = document.getElementById("pituus").value;
+
+            const response = await fetch("http://localhost:5000/tarina", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({alkusana, pituus})
+            });
+            const data = await response.json();
+            document.getElementById("tarina").textContent = data.tarina;
+        }
+    </script>    
+</body>
+</html>
