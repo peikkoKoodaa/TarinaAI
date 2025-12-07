@@ -18,7 +18,9 @@ def tallenna_tarina(tarina, tiedostonimi="tarina.txt"):
         f.write(tarina + "\n\n")
     sano(f"Tarina tallennettu tiedostoon {tiedostonimi}!")
 
-tarinat = open("/home/toivo/tarinat.txt", "r", encoding="utf-8").read()
+here = os.path.dirname(__file__)
+tarinat_path = os.path.join(here, "tarinat.py")
+tarinat = open(tarinat_path, "r", encoding="utf-8").read()
 
 text = tarinat
 
