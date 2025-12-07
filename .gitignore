@@ -15,3 +15,7 @@ env/
 *.pth
 __pycache__/
 *.pyc
+env/
+*.pth
+__pycache__/
+*.pyc
