@@ -17,7 +17,7 @@
             const alkusana = document.getElementById("alkusana").value;
             const pituus = document.getElementById("pituus").value;
 
-            const response = await fetch("http://localhost:5000/tarina", {
+            const response = await fetch("http://https://tarinaai.onrender.com/tarina", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({alkusana, pituus})
