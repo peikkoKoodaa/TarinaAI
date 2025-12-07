@@ -1,5 +1,5 @@
 flask
 flask-cors
 torch
-pyttsx3
 numpy
+gunicorn
